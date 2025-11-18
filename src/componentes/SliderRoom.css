@@ -1,0 +1,129 @@
+/* ========== SLIDER ROOM (Misma base que SliderHero) ========== */
+
+.slider-room {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  background: #000;
+  border-radius: 18px;
+}
+
+.slider-room-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomIn 1.2s ease-in-out, fadeIn 0.8s ease;
+}
+
+/* Animaciones heredadas */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+
+/* Overlay */
+.slider-room-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  z-index: 1;
+}
+
+/* Flechas */
+.arrow-room {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+
+  font-size: 1.7rem;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrow-room:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-room.left { left: 25px; }
+.arrow-room.right { right: 25px; }
+
+/* Dots */
+.slider-room-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 10px;
+}
+
+.dot-room {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dot-room.active {
+  background: white;
+  width: 35px;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slider-room {
+    height: 300px;
+  }
+
+  .arrow-room {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+
+  .arrow-room.left { left: 15px; }
+  .arrow-room.right { right: 15px; }
+}
+
+@media (max-width: 480px) {
+  .slider-room {
+    height: 240px;
+  }
+
+  .arrow-room {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}

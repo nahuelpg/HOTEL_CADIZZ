@@ -1,44 +1,313 @@
+/* ========== SECCIÓN CONTACTO ========== */
+.contacto-section {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0a1628 0%, #1a2942 100%);
+  padding: 140px 40px 60px 40px;
+}
+
 .contacto-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
 }
 
-.contacto-form {
-  display: flex;
-  flex-direction: column; /* 🔹 Esto vuelve a poner los campos en vertical */
-  gap: 10px;
-  max-width: 400px;
+/* ========== INFORMACIÓN DE CONTACTO ========== */
+.contacto-info {
+  color: white;
 }
 
-.contacto-form input,
-.contacto-form textarea {
+.contacto-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.contacto-descripcion {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-size: 1.05rem;
+}
+
+.info-item {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-item:last-of-type {
+  border-bottom: none;
+}
+
+.info-subtitle {
+  color: #3b82f6;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-texto {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.info-texto a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-texto a:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.info-texto small {
+  display: block;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+}
+
+/* ========== MAPA ========== */
+.contacto-mapa {
+  margin-top: 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contacto-mapa iframe {
+  display: block;
+}
+
+/* ========== FORMULARIO ========== */
+.contacto-form-wrapper {
+  position: sticky;
+  top: 120px;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 45px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.form-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+.form-group input,
+.form-group textarea {
   width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: #2c2c2c;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: inherit;
 }
 
-.contacto-form button {
-  background-color: #007bff;
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #3b82f6;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.form-group input:disabled,
+.form-group textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========== BOTÓN DE ENVÍO ========== */
+.auth-submit {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   color: white;
   border: none;
-  padding: 10px;
-  border-radius: 4px;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
 
-.contacto-form button:hover {
-  background-color: #0056b3;
+.auth-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
 }
 
-.mapa {
-  border: 0;
-  width: 450px;
-  height: 300px;
-  border-radius: 8px;
+.auth-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.auth-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ========== MENSAJES DE ALERTA ========== */
+.mensaje-alerta {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mensaje-alerta.success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #86efac;
+}
+
+.mensaje-alerta.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 968px) {
+  .contacto-section {
+    padding: 120px 30px 40px 30px;
+  }
+
+  .contacto-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contacto-form-wrapper {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .contacto-section {
+    padding: 100px 20px 30px 20px;
+  }
+
+  .contacto-title {
+    font-size: 2rem;
+  }
+
+  .auth-card {
+    padding: 35px 25px;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 14px;
+  }
+
+  .auth-submit {
+    padding: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacto-section {
+    padding: 90px 15px 20px 15px;
+  }
+
+  .contacto-title {
+    font-size: 1.75rem;
+  }
 }
