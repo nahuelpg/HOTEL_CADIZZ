@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Hotel-Cadizz/', // 👈 nombre correcto del repo
+  base: '/HOTEL_CADIZZ/', // 👈 nombre correcto del repo
   
   
 
